@@ -1,6 +1,10 @@
 from django.conf.urls import include, url
+from django.contrib import admin
 
+
+admin.autodiscover()
 
 urlpatterns = [
-    url(r"ˆfaq/", include("faq.urls")),
+    url(r"^admin/", include(admin.site.urls)),
+    url(r"^jmbo/", include("jmbo.urls"))
 ]
