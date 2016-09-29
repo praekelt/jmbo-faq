@@ -3,23 +3,35 @@ from django.test import TestCase
 from faq import models
 
 class ModelTestCase(TestCase):
-    def setUp(self):
-        self.FAQ = models.FAQ(
+
+    @classmethod
+    def setUpClass(self):
+        self.FAQ = models.FAQ.objects.create(
             question = "Does the model work?",
             answer = "Yes, it does"
         )
 
-    def test_faq_model(self):
+    def test_faq_create(self):
         # Ensure model was saved correctly
         self.assertEquals(self.FAQ.question, "Does the model work?")
         self.assertEquals(self.FAQ.answer, "Yes, it does")
 
+    def test_faq_update(self):
         # Ensure model is updated
-        self.FAQ.question = "Does it really work?"
-        self.FAQ.answer = "Yes, no issues were identified"
-        self.FAQ.save()
-        self.assertEquals(self.FAQ.question, "Does it really work?")
-        self.assertEquals(self.FAQ.answer, "Yes, no issues were identified")
+        faq = models.FAQ.objects.get(id=self.FAQ.id)
+        faq.question = "Does it really work?"
+        faq.answer = "Yes, no issues were identified"
+        faq.save()
+        self.assertEquals(self.FAQ.id, faq.id)
+        self.assertEquals(faq.question, "Does it really work?")
+        self.assertEquals(faq.answer, "Yes, no issues were identified")
 
-    def tearDown(self):
+    def test_faq_delete(self):
+        # Ensure model is deleted
+        self.FAQ.delete()
+        exists = models.FAQ.objects.filter(id=self.FAQ.id).exists()
+        self.assertFalse(exists)       
+
+    @classmethod
+    def tearDownClass(self):
         del self.FAQ
