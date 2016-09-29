@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     "django.contrib.sites",
 )
 
-ROOT_URLCONF = "post.tests.urls"
+ROOT_URLCONF = "faq.tests.urls"
 
 MIDDLEWARE_CLASSES = (
     "django.middleware.common.CommonMiddleware",
