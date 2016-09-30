@@ -88,10 +88,6 @@ SITE_ID = 1
 
 STATIC_URL = "/static/"
 
-# Disable celery
-CELERY_ALWAYS_EAGER = True
-BROKER_BACKEND = "memory"
-
 SECRET_KEY = "SECRET_KEY"
 
 DEBUG = True
@@ -101,7 +97,3 @@ DEBUG = True
 ULTRACACHE = {"invalidate": False}
 
 CKEDITOR_UPLOAD_PATH = expanduser("~")
-
-REST_FRAMEWORK = {
-    "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.URLPathVersioning"
-}

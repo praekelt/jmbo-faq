@@ -10,7 +10,6 @@ env:
   - DJANGO=Django==1.6.8
 
 install:
-  - pip install -q $DJANGO --use-mirrors
   - pip install -r faq/tests/requirements/19.txt --use-mirrors
 
 before_script:
