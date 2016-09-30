@@ -2,15 +2,20 @@ from django.test import TestCase
 
 from faq import models
 
+
+def load_fixtures(kls):
+    kls.FAQ = models.FAQ.objects.create(
+        question = "Does the model work?",
+        answer = "Yes, it does"
+
+    )
+
 class ModelTestCase(TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.FAQ = models.FAQ.objects.create(
-            question = "Does the model work?",
-            answer = "Yes, it does"
-        )
-
+        load_fixtures(self)
+            
     def test_faq_create(self):
         # Ensure model was saved correctly
         self.assertEquals(self.FAQ.question, "Does the model work?")
