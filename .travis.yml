@@ -6,9 +6,6 @@ language: python
 python:
   - "2.7"
 
-env:
-  - DJANGO=Django==1.6.8
-
 install:
   - pip install -r faq/tests/requirements/19.txt --use-mirrors
 
