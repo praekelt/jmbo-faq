@@ -7,7 +7,6 @@ django-contrib-comments==1.7.1
 django-export==1.9
 django-object-tools==1.9
 django-pagination-fork==1.0.17
-django-photologue==3.5.1
 django-preferences==0.0.2
 django-sites-groups==1.9.1
 django-sortedm2m==1.2.2

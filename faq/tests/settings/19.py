@@ -31,11 +31,9 @@ xDATABASES = {
 INSTALLED_APPS = (
     "faq",
     "jmbo",
-    "photologue",
     "category",
     "ckeditor",
     "django_comments",
-    "likes",
     "secretballot",
     "pagination",
     "preferences",
