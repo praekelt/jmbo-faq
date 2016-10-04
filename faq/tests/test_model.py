@@ -7,7 +7,6 @@ def load_fixtures(kls):
     kls.FAQ = models.FAQ.objects.create(
         question = "Does the model work?",
         answer = "Yes, it does"
-
     )
 
 class ModelTestCase(TestCase):
@@ -17,12 +16,10 @@ class ModelTestCase(TestCase):
         load_fixtures(self)
             
     def test_faq_create(self):
-        # Ensure model was saved correctly
         self.assertEquals(self.FAQ.question, "Does the model work?")
         self.assertEquals(self.FAQ.answer, "Yes, it does")
 
     def test_faq_update(self):
-        # Ensure model is updated
         faq = models.FAQ.objects.get(id=self.FAQ.id)
         faq.question = "Does it really work?"
         faq.answer = "Yes, no issues were identified"
@@ -32,7 +29,6 @@ class ModelTestCase(TestCase):
         self.assertEquals(faq.answer, "Yes, no issues were identified")
 
     def test_faq_delete(self):
-        # Ensure model is deleted
         self.FAQ.delete()
         exists = models.FAQ.objects.filter(id=self.FAQ.id).exists()
         self.assertFalse(exists)       

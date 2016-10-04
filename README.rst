@@ -1,2 +1,3 @@
-# jmbo-faq
-FAQs App for JMBO
+Jmbo FAQ
+========
+**FAQs App for JMBO.**

@@ -8,4 +8,9 @@ urlpatterns = [
         ObjectDetail.as_view(),
         name="faq-faq-detail"
     ),
+    url(
+        r"^(?P<slug>[\w-]+)/$",
+        ObjectDetail.as_view(),
+        name="faq-faq-categorized-detail"
+    ),
 ]

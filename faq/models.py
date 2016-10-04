@@ -9,11 +9,9 @@ class FAQ(ModelBase):
     autosave_fields = ("question","answer",)
 
     question = models.TextField(
-        blank=True, null=True, help_text="A question frequently asked by users"
+        help_text="A question frequently asked by users"
     )
-
     answer = RichTextField(
-        blank=True, null=True,
         help_text="An short but informative answer to the question"
     )
 
