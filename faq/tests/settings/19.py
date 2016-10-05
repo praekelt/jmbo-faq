@@ -6,7 +6,7 @@ USE_TZ = True
 
 TIME_ZONE = "Africa/Johannesburg"
 
-DATABASES = {
+xDATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "jmbo",
@@ -14,6 +14,17 @@ DATABASES = {
         "PASSWORD": "",
         "HOST": "",
         "PORT": "",
+    }
+}
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "skeleton.db", # Or path to database file if using sqlite3.
+        "USER": "skeleton", # Not used with sqlite3.
+        "PASSWORD": "skeleton", # Not used with sqlite3.
+        "HOST": "", # Set to empty string for localhost. Not used with sqlite3.
+        "PORT": "", # Set to empty string for default. Not used with sqlite3.
     }
 }
 
