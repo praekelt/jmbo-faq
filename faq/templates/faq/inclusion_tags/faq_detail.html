@@ -2,4 +2,11 @@
 {% load ultracache_tags %}
 
 {% block content %}
+    {% ultracache 3600 "object-detail-inclusion" object.id object.modified request.page %}
+        {% with object.content_pages as content_pages %}
+            <div class="content">
+                {{ content_pages|safe }}
+            </div>
+        {% endwith %}
+    {% endultracache %}
 {% endblock %}
