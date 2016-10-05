@@ -4,7 +4,7 @@ setup(
     name="jmbo-faq",
     version="0.0.1",
     description="FAQs App for JMBO",
-    # long_description = open("README.rst", "r").read() + open("AUTHORS.rst", "r").read() + open("CHANGELOG.rst", "r").read(),
+    long_description = open("README.rst", "r").read() + open("AUTHORS.rst", "r").read() + open("CHANGELOG.rst", "r").read(),
     author="Praekelt Consulting",
     author_email="dev@praekelt.com",
     license="BSD",
