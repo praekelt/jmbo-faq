@@ -14,10 +14,13 @@ class FAQPermittedViewSet(jmbo_api.ModelBasePermittedViewSet):
 
 
 def register(router):
-    return rest_framework_extras.register(
-        router,
-        (
-            ("faq-faq-permitted", FAQPermittedViewSet),
-            ("faq-faq", FAQObjectsViewSet)
-        )
+    router.register(
+        "faq-faq", FAQObjectsViewSet
     )
+    # return rest_framework_extras.register(
+    #     router,
+    #     (
+    #         ("faq-faq-permitted", FAQPermittedViewSet),
+    #         ("faq-faq", FAQObjectsViewSet)
+    #     )
+    # )
