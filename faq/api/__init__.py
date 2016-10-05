@@ -18,3 +18,7 @@ def register(router):
         r"faq-faq",
         FAQObjectsViewSet,
     )
+    router.register(
+        r"faq-faq-permitted",
+        FAQPermittedViewSet,
+    )
