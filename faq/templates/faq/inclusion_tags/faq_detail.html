@@ -4,8 +4,10 @@
 {% block content %}
     {% ultracache 3600 "object-detail-inclusion" object.id object.modified request.page %}
         {% with object.content_pages as content_pages %}
+            {% autopaginate content_pages 1 %}
             <div class="content">
-                {{ content_pages|safe }}
+                <a name="jmbo-faq"></a>
+                {{ content_pages.0|safe }}
             </div>
         {% endwith %}
     {% endultracache %}

@@ -12,13 +12,17 @@ class ViewsTestCase(unittest.TestCase):
         cls.client = Client()
 
         obj, created = FAQ.objects.get_or_create(
+            title="faq",
             question="Is this a test?",
-            answer="Yes, it is"
+            answer="Yes, it is",
+            state="Published"
         )
+        obj.sites = [1]
         cls.faq = obj
 
-    def test_faq(self):
-        pass
+    def test_pagination(self):
+        response = self.client.get(self.faq.get_absolute_url())
+        import pdb; pdb.set_trace()
 
     @ classmethod
     def tearDownClass(cls):
