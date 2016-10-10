@@ -22,7 +22,6 @@ class ViewsTestCase(unittest.TestCase):
 
     def test_pagination(self):
         response = self.client.get(self.faq.get_absolute_url())
-        import pdb; pdb.set_trace()
 
     @ classmethod
     def tearDownClass(cls):
