@@ -1,10 +1,23 @@
 from setuptools import setup, find_packages
 
+def construct_long_description():
+    long_description = ""
+    for file_name in ["README.rst", "AUTHORS.rst", "CHANGELOG.rst"]:
+        try:
+            file_buffer = open(file_name, "r")
+            long_description += file_buffer.read()
+        except IOError:
+            pass
+        finally:
+            file_buffer.close()
+    return long_description
+
+
 setup(
     name="jmbo-faq",
     version="0.0.1",
     description="FAQs App for JMBO",
-    long_description = open("README.rst", "r").read() + open("AUTHORS.rst", "r").read() + open("CHANGELOG.rst", "r").read(),
+    long_description=construct_long_description(),
     author="Praekelt Consulting",
     author_email="dev@praekelt.com",
     license="BSD",
