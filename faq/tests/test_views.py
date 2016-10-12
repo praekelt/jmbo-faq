@@ -23,7 +23,7 @@ class ViewsTestCase(unittest.TestCase):
     def test_pagination(self):
         response = self.client.get(self.faq.get_absolute_url())
 
-    @ classmethod
+    @classmethod
     def tearDownClass(cls):
         del cls.client
         del cls.faq
