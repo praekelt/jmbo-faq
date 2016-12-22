@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     "django_comments",
     "secretballot",
     "likes",
+    "layers",
     "pagination",
     "preferences",
     "ultracache",
