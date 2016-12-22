@@ -1,5 +1,5 @@
 {% extends "jmbo/inclusion_tags/modelbase_detail.html" %}
-{% load ultracache_tags %}
+{% load ultracache_tags pagination_tags %}
 
 {% block content %}
     {% ultracache 3600 "object-detail-inclusion" object.id object.modified request.page %}
