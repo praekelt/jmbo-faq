@@ -27,6 +27,6 @@ class ModelTestCase(TestCase):
         self.assertEquals(faq.answer, "Yes, no issues were identified")
 
     def test_faq_delete(self):
-        self.FAQ.delete()
+        self.faq.delete()
         exists = models.FAQ.objects.filter(id=self.faq.id).exists()
         self.assertFalse(exists)       
