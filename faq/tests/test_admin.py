@@ -10,6 +10,8 @@ class AdminTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        cls.client = Client()
+
         cls.testuser = get_user_model().objects.create(
             username="testuser",
             email="testemail@test.com",
@@ -36,20 +38,16 @@ class AdminTestCase(TestCase):
         )
 
     def setUp(self):
-        # self.client.logout()
         self.client.login(username="testuser", password="password")
 
     def test_admin_add(self):
-        # self.client.login(username="testuser", password="password")
         response = self.client.get("/admin/faq/faq/add/")
         self.assertEquals(response.status_code, 200)
 
     def test_admin_change(self):
-        # self.client.login(username="testuser", password="password")
         response = self.client.get("/admin/faq/faq/%s/change/" % self.faq.pk)
         self.assertEquals(response.status_code, 200)
 
     def test_admin_relation(self):
-        # self.client.login(username="testuser", password="password")
         response = self.client.get("/admin/faq/faq/add/")
         self.failUnless("Faq faqs" in response.content)
