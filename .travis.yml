@@ -12,4 +12,4 @@ install:
 before_script:
     - psql -U postgres -c "create database jmbo encoding 'UTF8'"
 
-script: python setup.py test
+script: tox
