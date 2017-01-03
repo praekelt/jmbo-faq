@@ -1,0 +1,13 @@
+{% load ultracache_tags listing_tags i18n %}
+
+{% ultracache 3600 'modelbase-listing-item-inclusion' object.id object.modified %}
+    <div class="title">
+        {% if object.categories.all.exists %}<span class="category">{{ object.categories.all|join_titles }}:</span>{% endif %}
+        {% comment %}
+            Using the question field instead of the title field for faq listings.
+            It is noted that question fields can be quite long, and this will be resolved later if it proves to
+            be problematic.
+        {% endcomment %}
+        <a href="{{ object.get_absolute_url_categorized }}" title="{{ object.title|escape }}">{{ object.question }}</a>
+    </div>
+{% endultracache %}

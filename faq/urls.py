@@ -6,11 +6,11 @@ urlpatterns = [
     url(
         r"^(?P<category_slug>[\w-]+)/(?P<slug>[\w-]+)/$",
         ObjectDetail.as_view(),
-        name="faq-faq-detail"
+        name="faq-categorized-detail"
     ),
     url(
         r"^(?P<slug>[\w-]+)/$",
         ObjectDetail.as_view(),
-        name="faq-faq-categorized-detail"
+        name="faq-detail"
     ),
 ]

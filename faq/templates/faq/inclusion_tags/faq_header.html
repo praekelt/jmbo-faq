@@ -1,0 +1,9 @@
+{% load ultracache_tags %}
+
+{% ultracache 3600 "object-header-inclusion" object.id object.modified %}
+    <div class="header-inclusion">
+        <div class="question">
+            {{ object.question }}
+        </div>
+    </div>
+{% endultracache %}
