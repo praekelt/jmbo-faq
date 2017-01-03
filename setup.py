@@ -24,6 +24,7 @@ setup(
     url="http://github.com/praekelt/jmbo-faq",
     packages = find_packages(),
     install_requires = [
+        "django-simplemde",
         #"jmbo>=3.0.0", uncomment when released
     ],
     include_package_data=True,
