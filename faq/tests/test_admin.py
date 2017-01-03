@@ -34,8 +34,6 @@ class AdminTestCase(TestCase):
             name="faq_faqs"
         )
 
-        # super(AdminTestCase, cls).setUpTestData()
-
     def setUp(self):
         super(AdminTestCase, self).setUp()
         self.client.login(username="testuser", password="password")
