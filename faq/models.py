@@ -2,7 +2,7 @@ from django.db import models
 
 from jmbo.models import ModelBase
 
-from ckeditor.fields import RichTextField
+from simplemde.fields import SimpleMDEField
 
 
 class FAQ(ModelBase):
@@ -11,7 +11,7 @@ class FAQ(ModelBase):
     question = models.TextField(
         help_text="A question frequently asked by users"
     )
-    answer = RichTextField(
+    answer = SimpleMDEField(
         help_text="An short but informative answer to the question"
     )
 
