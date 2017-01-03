@@ -10,7 +10,6 @@ class AdminTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        cls.client = Client()
         cls.testuser = get_user_model().objects.create(
             username="testuser",
             email="testemail@test.com",
@@ -35,6 +34,8 @@ class AdminTestCase(TestCase):
             target_object_id=0,
             name="faq_faqs"
         )
+
+        super(AdminTestCase, cls).setUpTestData()
 
     def setUp(self):
         self.client.login(username="testuser", password="password")
