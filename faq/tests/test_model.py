@@ -11,7 +11,6 @@ class ModelTestCase(TestCase):
             question="Does the model work?",
             answer="Yes, it does"
         )
-        super(ModelTestCase, cls).setUpTestData()
             
     def test_faq_create(self):
         self.assertEquals(self.faq.question, "Does the model work?")

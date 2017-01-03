@@ -18,7 +18,6 @@ class AdminTestCase(TestCase):
         )
         cls.testuser.set_password("password")
         cls.testuser.save()
-        cls.client.login(username="testuser", password="password")
 
         obj, created = FAQ.objects.get_or_create(
             question="Does this exist?",
@@ -35,11 +34,11 @@ class AdminTestCase(TestCase):
             name="faq_faqs"
         )
 
-        super(AdminTestCase, cls).setUpTestData()
+        # super(AdminTestCase, cls).setUpTestData()
 
     def setUp(self):
-        self.client.login(username="testuser", password="password")
         super(AdminTestCase, self).setUp()
+        self.client.login(username="testuser", password="password")
 
     def test_admin_add(self):
         response = self.client.get("/admin/faq/faq/add/")
