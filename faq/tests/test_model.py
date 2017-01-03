@@ -7,6 +7,7 @@ class ModelTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        cls.client = Client()
         cls.faq = models.FAQ.objects.create(
             question="Does the model work?",
             answer="Yes, it does"

@@ -10,6 +10,7 @@ class AdminTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        cls.client = Client()
         cls.testuser = get_user_model().objects.create(
             username="testuser",
             email="testemail@test.com",
