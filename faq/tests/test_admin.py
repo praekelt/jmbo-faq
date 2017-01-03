@@ -39,6 +39,7 @@ class AdminTestCase(TestCase):
 
     def setUp(self):
         self.client.login(username="testuser", password="password")
+        super(AdminTestCase, self).setUp()
 
     def test_admin_add(self):
         response = self.client.get("/admin/faq/faq/add/")
