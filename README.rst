@@ -19,3 +19,4 @@ FAQ introduces 2 fields called `Question` and `Answer`.
 
 1.  Question is a text field.
 2.  Answer is a rich-text field of arbitrary length.
+
