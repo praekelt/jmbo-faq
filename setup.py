@@ -15,7 +15,7 @@ def construct_long_description():
 
 setup(
     name="jmbo-faq",
-    version="0.0.1",
+    version="0.1.0",
     description="FAQs App for JMBO",
     long_description=construct_long_description(),
     author="Praekelt Consulting",
